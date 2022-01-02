@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <title>LED HeXpressions Visor V1</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <!-- Open Graph -->
+    <meta content="Artificer Drone 8483" property="og:title" />
+    <meta content="LED HeXpressions Visor" property="og:description" />
+    <meta content="https://hexdrone8483.github.io" property="og:url" />
+    <meta
+      content="https://pbs.twimg.com/profile_images/1475494629084745730/vRx_8HF6_400x400.jpg"
+      property="og:image"
+    />
+    <meta content="#f869ff" data-react-helmet="true" name="theme-color" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@CuteLucilleNSFW" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./mobilemenu.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <header>
+          <a href="javascript:void(0);" id="navbar-icon" onclick="hamburgerMenu()">
+            <i class="fa fa-bars"></i>
+          </a>
+          <ul class="nav-bar" id="nav-bar">
+            <li><a href="./index.html">Profile</a></li>
+            <li class="dropdown">
+              <a href="./projects.html">Projects</a>
+              <div class="dropdown-content">
+                <a href="./LEDVisorV1.html" class="active">LED Visor</a>
+                <a href="./BLEVisor.html">Bluetooth Visor</a>
+              </div>
+            </li>
+            <li id="fl-right1"><a href="https://www.hexcorp.net/">HexCorp</a></li>
+            <li id="fl-right2"><a href="https://twitter.com/HexDrone8483">Twitter</a></li>
+          </ul>
+        </header>
+        <div class="contents">
+          <section class="summary">
+            <section class="image">
+              <img src="https://pbs.twimg.com/profile_images/1475572091684638726/BQ0ti7IQ_400x400.jpg" />
+            </section>
+            <section class="info">
+              <h1>Hexpressions Visor</h1>
+              <ul>
+                <li>
+                  <b>Version:</b>
+                  <span> 0.1.0</span>
+                </li>
+                <li>
+                  <b>Overview:</b>
+                  <span>Prototype Visor Insert</span>
+                </li>
+                <li>
+                  <b>Last Updated:</b>
+                  <span>02/01/2022</span>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="summary">
+            <h1>Under Construction</h1>
+            <p>
+              The guide for creating the Hexpressions Visor Insert v1.0.0 is still a work in progress. Clarifications and images will be added later to further improve the instructions below. Follow <a href="https://twitter.com/HexDrone8483">⬡-Drone #8483</a> on Twitter for updates.
+            </p>
+          </section>
+          <section class="summary no-transform">
+            <h1>Components and Tools</h1>
+            <ul>
+              <li>
+                <b>Components</b>
+                <ul>
+                  <li>Arduino Nano</li>
+                  <li>9V Battery</li>
+                  <li>
+                    <a href="https://www.amazon.co.uk/Pieces-Battery-Connector-I-type-Plastic/dp/B097DL8DWW">
+                      9V Battery snap connector
+                    </a>
+                  </li>
+                  <li>3-pin connector and leads (optional)</li>
+                  <li>
+                    <a href="https://www.amazon.co.uk/BTF-LIGHTING-Individual-Addressable-Flexible-Controllers/dp/B088W62171/">
+                      8x8 Flexible WS2812B LED Matrix
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.amazon.co.uk/20pcs-Black-Switch-Electronic-Projects/dp/B008R50AA0/">
+                      Small slide switch.
+                    </a>
+                  </li>
+                  <li>Velcro (optional)</li>
+                </ul>
+              </li>
+              <li>
+                <b>Tools</b>
+                <ul>
+                  <li>Soldering Iron</li>
+                  <li>Desoldering Tool (optional)</li>
+                  <li>Needle-nose wire cutters</li>
+                  <li>Mini-USB cable</li>
+                  <li>
+                    <a href="https://www.arduino.cc/en/software">
+                      Arduino IDE
+                    </a>
+                  </li>
+                  <li>3-D Printer (optional)</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section class="summary no-transform">
+            <h1>Assembly</h1>
+
+            <p>
+              Start by soldering the red lead from the 9V snap connector to the VIN pin on the Arduino board. Trim off a 2cm portion of the black lead and set it to one side. Solder the end of the remaining black lead (connected to the 9V battery) to the center eyelet on the slide switch. Use the trimmed off portion to connect either of the outside eyelets to the GND pin on the Arduino.
+            </p>
+            <p>
+              Inspect the back of the LED matrix. If you have purchased the one linked above, it will have three sets of wires coming off labelled terminal clusters - a DIN/5V/GND set, a 5V/GND set and a DOUT/5V/GND set. You can remove the latter two to get them out of the way either by desoldering them (clean) or just cutting them off (messy and may scratch your visor). Make a note of the colours of the individual wires coming off the remaining terminal cluster, as they correspond to the same colours on the included connector.
+            </p>
+            <p>
+              Take the connector and gently separate the ends of the three wires. Solder the DIN wire to any data pin on your Arduino Nano (if in doubt, use D2.). Solder the 5V wire to the 5V pin, and the GND wire to either of the GND pins. 
+            </p>
+            <p>
+              Use the needle-nose wire cutters to trim down your soldering.
+            </p>
+            <p>
+              Connect the 9V battery to the snap connector, and make sure the slide switch is set to the off position (if it's on, the Arduino will have a small red LED lit up).
+            </p>
+            <p>
+              It's strongly recommended you manufacture or repurpose some kind of small case to contain the Arduino and 9V battery, as it's likely you may damage your latex or Millennium head harness otherwise - either through heat generated by components or from exposed soldering scratching it. 8483 is currently designing a 3D printable case which can be attached using velcro to the back pad of the head harness - check back later for updates or create your own and send them in to be featured here!
+            </p>
+            <p>
+              However you choose to contain your Arduino and battery, make sure the 3-pin connector is sticking out and that there is enough length in the wire to reach the front of your visor.
+            </p>
+          </section>
+
+          <section class="summary no-transform">
+            <h1>Programming</h1>
+
+            <p>
+              Launch the Arduino IDE and from the menu bar at the top select Tools > Manage libraries, or press CTRL+SHIFT+I. In the search bar, search for "FastLED". Click install on the result. You will only have to do this step once, unless you uninstall the IDE.
+            </p>
+            <p>
+              Close the window and connect your Arduino Nano to your computer using the Mini-USB cable. In the menu bar, select Tools > Get Board Info to make sure your board is connected and set up correctly. Refer to troubleshooting guides online, or message #8483 if you encounter any issues (It will help where it can, but please try to help yourself first and only message it if you're really really stuck).
+            </p>
+            <p>
+              Download the code from the <a href="https://github.com/HexDrone8483/Hexpressions">Hexpressions</a> repository. Feel free to play around with it.
+            </p>
+            <p>
+              To upload the code, make sure your Arduino is connected via the Mini-USB cable and that its power switch is set to the off position. It's worth clicking the Verify button first in the IDE (the tick in the top left corner) to make sure your code will compile. Finally, click the upload button in the top left of the Arduino IDE. If your code fails to upload, or changes you've made don't display on the visor, make sure you've configured the IDE correctly and that your code does not contain any errors.
+            </p>
+
+            <p>
+              This process is quite inconvenient and does not allow for quick expression changes on the fly. A Bluetooth enable visor is in the works - have a look <a href="./BLEVisor.html">here</a> for more info.
+            </p>
+          </section>
+          <section class="summary no-transform">
+            <h1>Mounting</h1>
+            
+            <p>
+              Since the LED matrix can be separated from the Arduino thanks to the 3-pin connectors, mounting and removing it is as simple as wedging it between your MSA Millennium's visor and tinted outsert. There should be just enough room for a snug fit. Make sure the connector is sticking out and that the display is oriented correctly.
+            </p>
+
+            <p>
+              Attach the arduino to the back of the Millennium's harness, and connect the 3-pin connector to the LED display. Flip the switch to the on position to power it on and show off how happy you are to be a member of HexCorp~!
+            </p>
+          </section>
+
+          <section class="summary no-transform">
+            <h1>Safety</h1>
+
+            <p>
+              If mounting on the inside of the visor instead of between the visor and the outsert, take extra care that the back of the display does not come into contact with your skin. NEVER run wires across bare skin - it's possible that they may generate heat and cause lasting damage. Avoid setting LEDs to full white as this will increase power consumption, potentially generating a lot of heat, and shortening the lifespan of the LEDs.
+            </p>
+
+            <p>
+              In using this website, you agree to release the creator of this website for any injury, damage or losses caused by the use or misuse of this website and any projects or services contained within. You also specifically acknowledge and agree that your use of any of the services or software provided, or devices described by this website is at your sole risk. 
+            </p>
+
+            <p>
+              The device described in this guide is not certified as being safe for use on humans by any recognised authority and it is not recommended that you do so.
+            </p>
+          </section>
+        </div>
+        <footer>
+          <ul>
+            <li>
+              <a href="https://github.com/drone7355/hex-profile">
+                Website originally developed by Cute Drone 7355, find it on GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/hexdrone8483/">
+                Modifications by Artificer Drone 8483.
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
